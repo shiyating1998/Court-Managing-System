@@ -2,203 +2,316 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Court Managing System - Customer Side</title>
-	<h1>Welcome To BOOOOOK Yourself!</h1>
+
+	<!-- do i need this  -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="you can book courts at your will, see available courts">
+    <meta name="author" content="Jennifer Shi" >
+
+	<!-- bootstrap cdn css -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="css_jenn/style.css">
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+
+	<title> Managing System - Customer Side</title>
+
+
+	<div class="container">
+		<header>	
+			<nav class="navbar navbar-expand-lg navbar-light bg-light">
+				<div class="container-fluid">
+					<img
+					class="img-fluid  d-none d-sm-block"
+					src="img/logo.png"
+					alt=""
+					/>
+
+					<a class="navbar-brand" href="#">Lions Badminton Club</a>
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" >
+						<span class="navbar-toggler-icon"></span>
+					</button>
+
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+						<li class="nav-item">
+							<a class="nav-link active" href="#">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link active" href="sales-bundle.html">Sales Bundle</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+							Profile
+							</a>
+							<ul class="dropdown-menu">
+							<li><a class="dropdown-item" href="#">Transaction History</a></li>
+							<li><a class="dropdown-item" href="#">My Booking</a></li>
+							<li><a class="dropdown-item" href="#">My Bundle</a></li>
+							<li><a class="dropdown-item" href="#">Payment Method</a></li>
+							<li><a class="dropdown-item" href="#">Contact/Feedback</a></li>
+							<li><a class="dropdown-item" href="#">Reset Password</a></li>
+							<li><hr class="dropdown-divider"></li>
+							<li><a class="dropdown-item" href="#">Something else here</a></li>
+							</ul>
+						</li>
+						
+						</ul>
+						<form class="d-flex">
+						<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+						<button class="btn btn-outline-success" type="submit">Search</button>
+						</form>
+					</div>
+					</div>
+			</nav>
+		</header>
+	</div>	
 </head>
+
 <body>
-	<table>
-		<tr>
-			<th>Time</th>
-			<th>Court 1</th>
-			<th>Court 2</th>
-			<th>Court 3</th>
-			<th>Court 4</th>
-			<th>Court 5</th>
-			<th>Court 6</th>
-			<th>Court 7</th>
-			<th>Court 8</th>
-			<th>Court 9</th>
-		</tr>
+	<div id="app">
+		<div class="d-flex justify-content-center">			
+			<div class="btn-group btn-group-toggle align-center" data-toggle="buttons">
+				<label class="btn btn-secondary">
+					<input type="radio" name="options" id="option1" autocomplete="off" checked> Today Oct 28
+				</label>
+				<label class="btn btn-secondary">
+					<input type="radio" name="options" id="option2" autocomplete="off"> Fri Oct 29
+				</label>
+				<label class="btn btn-secondary">
+					<input type="radio" name="options" id="option3" autocomplete="off"> Sat Oct 30
+				</label>
+				<label class="btn btn-secondary">
+					<input type="radio" name="options" id="option1" autocomplete="off"> Sun Oct 28
+				</label>
+				<label class="btn btn-secondary">
+					<input type="radio" name="options" id="option2" autocomplete="off"> Mon Oct 29
+				</label>
+				<label class="btn btn-secondary">
+					<input type="radio" name="options" id="option3" autocomplete="off"> Tue Oct 30
+				</label>
+			</div>		
+				
+		</div>
+		<br>
+		<div class="table responsive text-center" >
+			<table class="table table-bordered" id="bookings"> 
+				<tr>
+					<th>Time</th>
+					<th>Court 1</th>
+					<th>Court 2</th>
+					<th>Court 3</th>
+					<th>Court 4</th>
+					<th>Court 5</th>
+					<th>Court 6</th>
+					<th>Court 7</th>
+					<th>Court 8</th>
+					<th>Court 9</th>
+				</tr>
 
-		<tr>
-			<th>9:00 - 10:00</th>
-			<th>NA</th>
-			<th>NA</th>
-			<th>NA</th>
-			<th>NA</th>
-			<th>NA</th>
-			<th>NA</th>
-			<th>NA</th>
-			<th>NA</th>
-			<th>NA</th>
-		</tr>
+				<tr>
+					<th>9:00 - 10:00</th>
+					<th class="bg-primary text-white">NA</th>
+					<th :class="na">NA</th>
+					<th>NA</th>
+					<th>NA</th>
+					<th>NA</th>
+					<th>NA</th>
+					<th>NA</th>
+					<th>NA</th>
+					<th>NA</th>
+				</tr>
 
-		<tr>
-			<th>10:00 - 11:00</th>
-			<th>NA</th>
-			<th>NA</th>
-			<th>NA</th>
-			<th>NA</th>
-			<th>NA</th>
-			<th>NA</th>
-			<th>NA</th>
-			<th>NA</th>
-			<th>NA</th>
-		</tr>
-		<tr>
-			<th>11:00 - 12:00</th>
-			<th>NA</th>
-			<th>NA</th>
-			<th>NA</th>
-			<th>NA</th>
-			<th>NA</th>
-			<th>NA</th>
-			<th>NA</th>
-			<th>NA</th>
-			<th>NA</th>
-		</tr>
-		<tr>
-			<th>12:00 - 13:00</th>
-			<th>NA</th>
-			<th>NA</th>
-			<th>NA</th>
-			<th>NA</th>
-			<th>NA</th>
-			<th>NA</th>
-			<th>NA</th>
-			<th>NA</th>
-			<th>NA</th>
-		</tr>
-		<tr>
-			<th>13:00 - 14:00</th>
-			<th>Drop in</th>
-			<th>Drop in</th>
-			<th>Drop in</th>
-			<th>$15</th>
-			<th>$15</th>
-			<th>$15</th>
-			<th>$15</th>
-			<th>$15</th>
-			<th>$15</th>
-		</tr>
-		<tr>
-			<th>14:00 - 15:00</th>
-			<th>Drop in</th>
-			<th>Drop in</th>
-			<th>Drop in</th>
-			<th>$15</th>
-			<th>$15</th>
-			<th>$15</th>
-			<th>$15</th>
-			<th>$15</th>
-			<th>$15</th>
-		</tr>
-		<tr>
-			<th>15:00 - 16:00</th>
-			<th>Drop in</th>
-			<th>Drop in</th>
-			<th>Drop in</th>
-			<th>$15</th>
-			<th>$15</th>
-			<th>$15</th>
-			<th>$15</th>
-			<th>$15</th>
-			<th>$15</th>
-		</tr>
+				<tr>
+					<th>10:00 - 11:00</th>
+					<th>NA</th>
+					<th>NA</th>
+					<th>NA</th>
+					<th>NA</th>
+					<th>NA</th>
+					<th>NA</th>
+					<th>NA</th>
+					<th>NA</th>
+					<th>NA</th>
+				</tr>
+				<tr>
+					<th>11:00 - 12:00</th>
+					<th>NA</th>
+					<th>NA</th>
+					<th>NA</th>
+					<th>NA</th>
+					<th>NA</th>
+					<th>NA</th>
+					<th>NA</th>
+					<th>NA</th>
+					<th>NA</th>
+				</tr>
+				<tr>
+					<th>12:00 - 13:00</th>
+					<th>NA</th>
+					<th>NA</th>
+					<th>NA</th>
+					<th>NA</th>
+					<th>NA</th>
+					<th>NA</th>
+					<th>NA</th>
+					<th>NA</th>
+					<th>NA</th>
+				</tr>
+				<tr>
+					<th>13:00 - 14:00</th>
+					<th>Drop in</th>
+					<th>Drop in</th>
+					<th>Drop in</th>
+					<th>$15</th>
+					<th>$15</th>
+					<th>$15</th>
+					<th>$15</th>
+					<th>$15</th>
+					<th>$15</th>
+				</tr>
+				<tr>
+					<th>14:00 - 15:00</th>
+					<th>Drop in</th>
+					<th>Drop in</th>
+					<th>Drop in</th>
+					<th>$15</th>
+					<th>$15</th>
+					<th>$15</th>
+					<th>$15</th>
+					<th>$15</th>
+					<th>$15</th>
+				</tr>
+				<tr>
+					<th>15:00 - 16:00</th>
+					<th>Drop in</th>
+					<th>Drop in</th>
+					<th>Drop in</th>
+					<th>$15</th>
+					<th>$15</th>
+					<th>$15</th>
+					<th>$15</th>
+					<th>$15</th>
+					<th>$15</th>
+				</tr>
 
-		<tr>
-			<th>16:00 - 17:00</th>
-			<th>Drop in</th>
-			<th>Drop in</th>
-			<th>Drop in</th>
-			<th>$20</th>
-			<th>$20</th>
-			<th>NA</th>
-			<th>NA</th>
-			<th>$20</th>
-			<th>$20</th>
-		</tr>
+				<tr>
+					<th>16:00 - 17:00</th>
+					<th>Drop in</th>
+					<th>Drop in</th>
+					<th>Drop in</th>
+					<th>$20</th>
+					<th>$20</th>
+					<th>NA</th>
+					<th>NA</th>
+					<th>$20</th>
+					<th>$20</th>
+				</tr>
 
-		<tr>
-			<th>17:00 - 18:00</th>
-			<th>Drop in</th>
-			<th>Drop in</th>
-			<th>Drop in</th>
-			<th>$20</th>
-			<th>$20</th>
-			<th>NA</th>
-			<th>NA</th>
-			<th>$20</th>
-			<th>$20</th>
-		</tr>
+				<tr>
+					<th>17:00 - 18:00</th>
+					<th>Drop in</th>
+					<th>Drop in</th>
+					<th>Drop in</th>
+					<th>$20</th>
+					<th>$20</th>
+					<th>NA</th>
+					<th>NA</th>
+					<th>$20</th>
+					<th>$20</th>
+				</tr>
 
-		<tr>
-			<th>18:00 - 19:00</th>
-			<th>Drop in</th>
-			<th>Drop in</th>
-			<th>Drop in</th>
-			<th>$20</th>
-			<th>NA</th>
-			<th>$20</th>
-			<th>$20</th>
-			<th>$20</th>
-			<th>$20</th>
-		</tr>
+				<tr>
+					<th>18:00 - 19:00</th>
+					<th>Drop in</th>
+					<th>Drop in</th>
+					<th>Drop in</th>
+					<th>$20</th>
+					<th>NA</th>
+					<th>$20</th>
+					<th>$20</th>
+					<th>$20</th>
+					<th>$20</th>
+				</tr>
 
-		<tr>
-			<th>19:00 - 20:00</th>
-			<th>Drop in</th>
-			<th>Drop in</th>
-			<th>Drop in</th>
-			<th>NA</th>
-			<th>NA</th>
-			<th>$20</th>
-			<th>$20</th>
-			<th>$20</th>
-			<th>$20</th>
-		</tr>
+				<tr>
+					<th>19:00 - 20:00</th>
+					<th>Drop in</th>
+					<th>Drop in</th>
+					<th>Drop in</th>
+					<th>NA</th>
+					<th>NA</th>
+					<th>$20</th>
+					<th>$20</th>
+					<th>$20</th>
+					<th>$20</th>
+				</tr>
 
-		<tr>
-			<th>20:00 - 21:00</th>
-			<th>Drop in</th>
-			<th>Drop in</th>
-			<th>Drop in</th>
-			<th>NA</th>
-			<th>NA</th>
-			<th>$20</th>
-			<th>$20</th>
-			<th>$20</th>
-			<th>$20</th>
-		</tr>
+				<tr>
+					<th>20:00 - 21:00</th>
+					<th>Drop in</th>
+					<th>Drop in</th>
+					<th>Drop in</th>
+					<th>NA</th>
+					<th>NA</th>
+					<th>$20</th>
+					<th>$20</th>
+					<th>$20</th>
+					<th>$20</th>
+				</tr>
 
-		<tr>
-			<th>21:00 - 22:00</th>
-			<th>Drop in</th>
-			<th>Drop in</th>
-			<th>Drop in</th>
-			<th>$20</th>
-			<th>$20</th>
-			<th>$20</th>
-			<th>$20</th>
-			<th>$20</th>
-			<th>NA</th>
-		</tr>
+				<tr>
+					<th>21:00 - 22:00</th>
+					<th>Drop in</th>
+					<th>Drop in</th>
+					<th>Drop in</th>
+					<th>$20</th>
+					<th>$20</th>
+					<th>$20</th>
+					<th>$20</th>
+					<th>$20</th>
+					<th>NA</th>
+				</tr>
 
-		<tr>
-			<th>22:00 - 23:00</th>
-			<th>Drop in</th>
-			<th>Drop in</th>
-			<th>Drop in</th>
-			<th>$20</th>
-			<th>$20</th>
-			<th>$20</th>
-			<th>$20</th>
-			<th>$20</th>
-			<th>$20</th>
-		</tr>
+				<tr>
+					<th>22:00 - 23:00</th>
+					<th>Drop in</th>
+					<th>Drop in</th>
+					<th>Drop in</th>
+					<th>$20</th>
+					<th>$20</th>
+					<th>$20</th>
+					<th>$20</th>
+					<th>$20</th>
+					<th>$20</th>
+				</tr>
 
-	</table>
+			</table>
+		</div>		
 
-	<script src="main.js"></script>
+		<button class="btn btn-primary float-right">BOOK</button>	
+	
+		<h1>{{ product }}</h1>
+	</div> <!-- app -->
+
+	
+
+	<!-- vue: development version, includes helpful console warnings -->
+	<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+	<!-- vue: production version, optimized for size and speed -->
+	<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+	<!-- bootstrap bundle -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+	<script src="js_jenn/main.js"></script>
+
+	<!-- to be removed -->
+	<script src="js_jenn/testing.js"></script>
 </body>
 </html>
